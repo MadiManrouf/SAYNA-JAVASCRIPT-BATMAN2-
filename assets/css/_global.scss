@@ -1,0 +1,196 @@
+/* Fonts */
+@font-face {
+    font-family: font1;
+    src: url(../fonts/Rajdhani-Medium.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(../fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+/* Style général */
+:root {
+    --yellow-color: #FFFF00;
+    --yellow-light: #F8F184;
+    --blue-color: #19587D;
+    --black1: #000000;
+    --grey-border: rgba(188, 187, 189, 0.2);
+    --color-black: #1f1e1e;
+    --gradient-white: #eddebf67;
+    --color-marine: #071b27;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1vw;
+}
+
+body {
+    overflow-x: hidden;
+    color: white;
+    background-color: var(--black1);
+}
+
+p{
+    font-family: font2;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+h1 {
+    font-family: font1;
+    font-size: 2.5em;
+}
+
+h2 {
+    font-family: font2;
+    font-size: 2.06em;
+    font-weight: 400;
+}
+
+figcaption {
+    font-family: font1;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+button {
+    font-family: font1;
+    font-size: 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.container{
+    border: 3px solid var(--grey-border);
+    border-top: 0;
+    border-bottom: 0;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+/* Nav */
+nav {
+    padding: 4% 0% 5% 4%;
+    margin-left: 7%;
+    margin-right: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid var(--grey-border);
+    border-bottom: 4px solid var(--grey-border);
+    border-top: 0px;
+    img {
+        width: 9vw;
+    }
+    ul {
+      list-style-type: none;
+      margin-right: 10%;
+      display: flex;
+      gap: 30%;
+      a {
+        display: block;
+        text-decoration: none;
+        font-family: font1;
+        font-size: 2em;
+        font-weight: bold;
+        color: white;
+        &:hover {
+          color: var(--yellow-color);
+          text-decoration: underline;
+        }
+      }
+    }
+    #active {
+        text-decoration: underline;
+    }
+  }
+
+
+// scrollIcon
+/* Scroll Icônes du côté droit */
+.scrollIcons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    right: 0%;
+    transform: translate(-40%);
+    top: 30%;
+    gap: 20px;
+    z-index: 10;
+}
+
+.scrollIcons img {
+    width: 1.7vw;
+}
+
+
+/*footer*/
+
+footer {
+    clear: right;
+}
+
+footer .text {
+    text-align: center;
+    font-size: 0.8em;
+    font-family: font2;
+}
+
+footer .social {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin: 2em 0;
+}
+
+footer .social-items img{
+    vertical-align: middle;
+    width: 1.7vw;
+}
+
+// effet pour passer en jaune
+nav a img:hover, .scrollIcons img:hover, #home:hover, .social-items img:hover{
+    -webkit-filter: invert(4%)sepia(100%)saturate(1680%)hue-rotate(352deg)brightness(109%)contrast(104%);
+    filter: invert(4%)sepia(100%)saturate(1680%)hue-rotate(352deg)brightness(109%)contrast(104%);
+}
+
+// entrées des éléments
+.zoom {
+    animation-name: zoomIn; /* Nom de l'animation */
+    animation-duration: 2s; /* Durée de l'animation */
+    animation-timing-function: ease-in-out; 
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+      transform: scale(0); /* La div est invisible au départ */
+    }
+    100% {
+      transform: scale(1); /* La div atteint sa taille normale à la fin de l'animation */
+    }
+}
